@@ -1,4 +1,5 @@
 #When doing this exercise, use methods when appropriate to keep things organized.
+require 'set'
 
 snowy = File.read 'the-man-from-snowy-river.txt'
 clancy = File.read 'clancy-of-the-overflow.txt'
@@ -22,12 +23,13 @@ puts (clancy_words - snowy_words).uniq.join ', '
 
 puts
 puts "The longest word in snowy is"
-puts "…"
-
+longest_word = ''
+snowy_words.each { |w| longest_word = w if longest_word.length < w.length }
+puts longest_word
 #Here, find the words that are in Snowy but not in the dictionary
 puts
 puts "Names in Snowy are:"
-puts "…"
+
 #Look up the documentation for Set to see how to test if a word is in it or not
 
 puts

@@ -23,3 +23,11 @@ while i < snowy_lines.count
 
   i += 9 # This is a short way of writing i = i + 1
 end
+
+snowy_lines.each_slice(9) do |lines|
+  last_words = lines.map{|line| last_word line}
+  [0, 1, 4, 5].each do |n|
+    puts "#{last_words[n]}, #{last_words[n + 2]}"
+
+  end
+end
